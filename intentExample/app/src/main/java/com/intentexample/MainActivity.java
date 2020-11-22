@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_move;
     private EditText et_text;
     private String str;
+    private ImageView test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { //안에있는 구문을 쫙실행행
@@ -30,6 +33,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent); //Main -> Sub로 이동함수
             }
         });
+
+        test = (ImageView) findViewById(R.id.test); // test변수는 ImageView를 가지고 온 것
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "홍드로이드 잘생김", Toast.LENGTH_SHORT).show(); // 이미지 클릭시 토스트 메시지 띄워짐
+            }
+        });
+
+
+
 
 
     }
